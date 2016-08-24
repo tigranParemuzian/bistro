@@ -1,0 +1,28 @@
+user:
+    firstName.not_blank: Please enter your firstName.
+    firstName.minLength: The firstName must be at least {{ limit }} characters long.
+    firstName.maxLength: The firstName cannot be longer than {{ limit }} characters.
+    lastName.not_blank: Please enter your lastName.
+    lastName.minLength: The lastName must be at least {{ limit }} characters long.
+    lastName.maxLength: The lastNamee cannot be longer than {{ limit }} characters.
+    birthday.not_blank: Please choose your birthday.
+    phone.not_blank: Please enter your phone number.
+    phone.minLength: The phone number must be at least {{ limit }} characters long.
+    phone.maxLength: The city cannot be longer than {{ limit }} characters.
+    state.not_blank: Please enter your state.
+
+finance:
+    payer.not_blank: Finnance payer can`t be blank
+    transferId.not_blank: Finnance transfer id can`t be blank
+    roadLength.not_blank: Finnance road length can`t be blank
+    paymentPrice.not_blank: Finnance Payment Price can`t be blank
+    paymentType.not_blank: Finnance payment type can`t be blank
+
+voting:
+    vote.not_blank: Please enter your vote.
+
+message:
+    subject.not_blank: Please enter message subject.
+    subject.maxLength: The message subject cannot be longer than {{ limit }} characters.
+    message.content.not_blank: Please enter message content.
+    message.content.maxLength: The message content cannot be longer than {{ limit }} characters.

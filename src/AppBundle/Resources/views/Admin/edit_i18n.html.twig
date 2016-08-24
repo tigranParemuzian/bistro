@@ -1,0 +1,8 @@
+{% extends 'SonataAdminBundle:CRUD:edit.html.twig' %}
+{% block footer %}
+    {{parent()}}
+    {{ tinymce_init({selector: "textarea" }) }}
+    <script>
+        $('textarea').attr('class', 'tinymce');
+    </script>
+{% endblock %}

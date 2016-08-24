@@ -1,0 +1,11 @@
+article:
+  address: Адрес -
+  architect: Архитектор -
+  importance: значение -
+  footer: Все права защищены.
+
+erorrs:
+  user:
+    not_found: Пользователь не найден или нет разрешение на этот процесс.
+  booking:
+    not_found: Новый заказ не найден.

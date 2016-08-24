@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity\Repository;
+namespace AppBundle\Repository;
 
 /**
  * UserRepository

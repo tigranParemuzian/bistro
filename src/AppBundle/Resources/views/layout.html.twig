@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html" dir="ltr" lang="en-US" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>
+    </title>
+    <meta name="description" content="Description" />
+    <meta name="keywords" content="Keywords" />
+    <link rel="stylesheet" href="/bundles/buildingmain/css/style.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="/bundles/buildingmain/javascript/jquery.js"></script>
+    <script type="text/javascript" src="/bundles/buildingmain/javascript/script.js"></script>
+    <script type="text/javascript" src="/bundles/buildingmain/javascript/slimbox2.js"></script>
+    <link rel="stylesheet" href="/bundles/buildingmain/css/slimbox2.css" type="text/css" media="screen" />
+</head>
+<body>
+<div id="art-main">
+    <div class="art-header">
+        <div class="art-header-clip">
+            <div class="art-header-center">
+                <div class="art-header-png"></div>
+                <div class="art-header-jpeg"></div>
+            </div>
+        </div>
+        <div class="art-header-wrapper">
+            <div class="art-header-inner">
+                <div class="art-logo" style="text-align:center; vertical-align:top">
+                    <a href="{{ path('building_content_homepage') }}" > <img src="/bundles/buildingmain/images/icons/logo_yerevan.png" border="0"></a>
+                    <br>
+                    <h1 class="art-logo-name">
+                        {% block title %}
+                        {% endblock title %}
+                    </h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cleared reset-box"></div>
+    <div class="art-nav">
+        <div class="art-nav-outer">
+            <div class="art-nav-wrapper" style="text-align:center">
+                <div id="top-bar" class="clearfix">
+                <br>
+                <p align="center">
+                    <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'am'})) }}"><img src="/bundles/buildingmain/images/flags/am.png" alt='Armenian' title='Armenian' border=0></a> &nbsp;&nbsp;&nbsp;
+                    <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}"><img src="/bundles/buildingmain/images/flags/en.png" alt='English' title='English' border=0></a> &nbsp;&nbsp;&nbsp;
+                    <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'ru'})) }}"><img src="/bundles/buildingmain/images/flags/ru.png" alt='Russian' title='Russian' border=0></a> &nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cleared reset-box"></div>
+    <div class="art-sheet">
+        <div class="art-sheet-tl"></div>
+        <div class="art-sheet-tr"></div>
+        <div class="art-sheet-bl"></div>
+        <div class="art-sheet-br"></div>
+        <div class="art-sheet-tc"></div>
+        <div class="art-sheet-bc"></div>
+        <div class="art-sheet-cl"></div>
+        <div class="art-sheet-cr"></div>
+        <div class="art-sheet-cc"></div>
+        <div class="art-sheet-body">
+            <div class="art-content-layout">
+                <div class="art-content-layout-row">
+                    <div class="art-layout-cell art-content">
+                        <div class="art-post">
+                            <div class="art-post-body">
+                                <div class="art-post-inner art-article">
+                                    <div class="cleared"></div>
+                                    <div class="art-postcontent">
+                                        <p>
+                                        <div>
+                                            {% block main %}{% endblock main %}
+                                            <hr width="100%">
+                                        </div>
+                                        <table width="100%">
+                                            <tr style="font-size:12px">
+                                                <td style="background-color:; padding-left:4px; padding-right:4px">
+                                                    <div align="center">
+                                                        <a href="/bundles/buildingmain/images/icons/thumb_3158811316000722.png"  rel="lightbox"><img src="/bundles/buildingmain/images/icons/thumb_3158811316000722.png" border="0" height="100px" style="border:none"></a>
+                                                        <a href="/bundles/buildingmain/images/icons/thumb_8361401316000728.jpg"  rel="lightbox"><img src="/bundles/buildingmain/images/icons/thumb_8361401316000728.jpg" border="0" height="100px" style="border:none"></a>
+                                                    </div>
+                                                    <hr width="100%">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+
+                                                    <div align='center'>
+                                                        {% block category  %}{% endblock category  %}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div class="cleared"></div>
+                                    </div>
+
+                                    <div class="cleared"></div>
+                                </div>
+                            </div>
+                            <div class="cleared"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cleared"></div>
+                <div class="art-footer">
+                    <div class="art-footer-t"></div>
+                    <div class="art-footer-l"></div>
+                    <div class="art-footer-b"></div>
+                    <div class="art-footer-r"></div>
+                    <div class="art-footer-body">
+                        <div class="art-footer-text">
+                            <p>&copy; {{ 'article.footer'|trans({}, "messages") }} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

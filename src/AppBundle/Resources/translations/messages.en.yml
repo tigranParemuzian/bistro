@@ -1,0 +1,19 @@
+article:
+  address: Addres -
+  architect: Architect -
+  importance: Importance -
+  footer: All rights reserved.
+
+erorrs:
+  user:
+    not_found: User not found or not have a permission for this process.
+
+  booking:
+    not_found: Booking not found.
+    history:
+      not_found: Booking history not found.
+
+note:
+  submitted: %firstName% get your request. Please wait %time%
+  visit: %firstName% visited you on Luvbyrd
+  favorite: %firstName% added you to favorites list on Luvbyrd

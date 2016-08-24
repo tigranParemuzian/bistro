@@ -1,0 +1,20 @@
+user:
+    firstName.not_blank: Пожалуйста, введите ваше имя.
+    firstName.minLength: Первое имя должно быть по крайней мере {{ limit }} предельных символов.
+    firstName.maxLength: первое имя не может быть длиннее, чем {{ limit }} предельных символов.
+    lastName.not_blank: Пожалуйста, введите Вашу фамилию.
+    lastName.maxLength: Последнее Namee не может быть больше, чем  {{ limit }} предельных символов.
+    birthday.not_blank: Пожалуйста, выберите свой день рождения.
+    phone.not_blank: Пожалуйста, введите свой номер телефона.
+    phone.minLength: Номер телефона должен быть по крайней мере {{ limit }} предельных символов.
+    phone.maxLength: Город не может быть больше, чем {{ limit }} предельных символов.
+    state.not_blank: Пожалуйста, введите ваше состояние.
+
+voting:
+    vote.not_blank: Please enter your vote.
+
+message:
+    subject.not_blank: Please enter message subject.
+    subject.maxLength: The message subject cannot be longer than {{ limit }} characters.
+    message.content.not_blank: Please enter message content.
+    message.content.maxLength: The message content cannot be longer than {{ limit }} characters.

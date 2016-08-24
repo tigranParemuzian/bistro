@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+  <services>
+    <!--<service id="twig.extension.building.main" class="Building\MainBundle\Twig\Extension\PageRouteExtension" public="false">-->
+      <!--<tag name="twig.extension" />-->
+      <!--<argument type="service" id="service_container"></argument>-->
+    <!--</service>-->
+    <!-- category -->
+    <!--<service id="main.admin.cars" class="AppBundle\Admin\CarsAdmin">
+      <tag name="sonata.admin" manager_type="orm" group="Menu" label="Cars"/>
+      <argument/>
+      <argument>AppBundle\Entity\Cars</argument>
+      <argument>SonataAdminBundle:CRUD</argument>
+        <call method="setTemplates">
+            <argument type="collection">
+                <argument key="edit">AppBundle:Admin:edit_i18n.html.twig</argument>
+                <argument key="show">SonataAdminBundle:CRUD:show.html.twig</argument>
+            </argument>
+        </call>
+    </service>
+
+    <service id="main.admin.category" class="AppBundle\Admin\CategoryAdmin">
+      <tag name="sonata.admin" manager_type="orm" group="Menu" label="Categoryes"/>
+      <argument/>
+      <argument>AppBundle\Entity\Category</argument>
+      <argument>SonataAdminBundle:CRUD</argument>
+        <call method="setTemplates">
+            <argument type="collection">
+                <argument key="edit">AppBundle:Admin:edit_i18n.html.twig</argument>
+                <argument key="show">SonataAdminBundle:CRUD:show.html.twig</argument>
+            </argument>
+        </call>
+    </service>
+     &lt;!&ndash;article &ndash;&gt;
+    <service id="main.admin.booking" class="AppBundle\Admin\BookingAdmin">
+      <tag name="sonata.admin" manager_type="orm" group="Menu" label="Booking"/>
+      <argument/>
+      <argument>AppBundle\Entity\Booking</argument>
+      <argument>SonataAdminBundle:CRUD</argument>
+        <call method="setTemplates">
+            <argument type="collection">
+                <argument key="edit">AppBundle:Admin:edit_i18n.html.twig</argument>
+                <argument key="show">SonataAdminBundle:CRUD:show.html.twig</argument>
+            </argument>
+        </call>
+    </service>
+
+      &lt;!&ndash; finances &ndash;&gt;
+    <service id="main.admin.finances" class="AppBundle\Admin\FinanceAdmin">
+      <tag name="sonata.admin" manager_type="orm" group="Menu" label="Finances"/>
+      <argument/>
+      <argument>AppBundle\Entity\Finance</argument>
+      <argument>SonataAdminBundle:CRUD</argument>
+        <call method="setTemplates">
+            <argument type="collection">
+                <argument key="edit">AppBundle:Admin:edit_i18n.html.twig</argument>
+                <argument key="show">SonataAdminBundle:CRUD:show.html.twig</argument>
+            </argument>
+        </call>
+    </service>
+
+    &lt;!&ndash;project settings &ndash;&gt;
+    <service id="main.admin.settings" class="AppBundle\Admin\SettingsAdmin">
+      <tag name="sonata.admin" manager_type="orm" group="Menu" label="Project Settings"/>
+      <argument/>
+      <argument>AppBundle\Entity\Settings</argument>
+        <argument>AppBundle:CloneAdmin</argument>
+        <call method="setTemplates">
+            <argument type="collection">
+                <argument key="edit">AppBundle:Admin:edit_i18n.html.twig</argument>
+                <argument key="show">SonataAdminBundle:CRUD:show.html.twig</argument>
+            </argument>
+        </call>
+    </service>-->
+
+    <service id="app.form.type.file" class="AppBundle\Form\IconType">
+      <tag name="form.type" alias="add_file_type"  />
+    </service>
+
+  </services>
+</container>

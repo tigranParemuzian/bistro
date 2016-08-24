@@ -70,6 +70,9 @@ doctrine:
         user:     "%database_user%"
         password: "%database_password%"
         charset:  UTF8
+        types:
+           json: Sonata\Doctrine\Types\JsonType
+
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
         #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
@@ -93,6 +96,7 @@ swiftmailer:
 fos_user:
        db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
        firewall_name: main
+       use_listener: false
        user_class: AppBundle\Entity\User
 
 # sonata block configuration
@@ -110,7 +114,7 @@ sonata_block:
 
 # sonata admin configuration
 sonata_admin:
-    title:      Ani Plus Taxi
+    title:      Bistro
     title_logo: /bundles/app/images/aniplus_logo.png
     templates:
         # default global templates
