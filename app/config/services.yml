@@ -7,3 +7,32 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+      app.admin.user:
+                  class: AppBundle\Admin\UserAdmin
+                  arguments: [~, AppBundle\Entity\User, SonataAdminBundle:CRUD]
+                  tags:
+                      - {name: sonata.admin, manager_type: orm, group: User, label: User}
+
+      admin.bistro:
+              class: AppBundle\Admin\BistroAdmin
+              arguments: [~, AppBundle\Entity\Bistro, ~]
+              tags:
+                  - { name: sonata.admin, manager_type: orm,  group: Menu, label: Bistro }
+
+      admin.ingredient:
+              class: AppBundle\Admin\IngredientAdmin
+              arguments: [~, AppBundle\Entity\Ingredient, ~]
+              tags:
+                  - { name: sonata.admin, manager_type: orm,  group: Menu, label: Ingredient }
+
+      admin.product:
+              class: AppBundle\Admin\ProductAdmin
+              arguments: [~, AppBundle\Entity\Product, ~]
+              tags:
+                  - { name: sonata.admin, manager_type: orm,  group: Menu, label: Product }
+
+      admin.product.ingredient:
+              class: AppBundle\Admin\ProductIngredientAdmin
+              arguments: [~, AppBundle\Entity\ProductIngredient, ~]
+              tags:
+                  - { name: sonata.admin, manager_type: orm,  group: Menu, label: Product Ingredient }

@@ -66,11 +66,11 @@ class Worker
      */
     private $type;
 
-    /**
-     * @var
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\BistroWorker", mappedBy="worker")
-     */
-    private $bistros;
+//    /**
+//     * @var
+//     * @ORM\OneToMany(targetEntity="AppBundle\Entity\BistroWorker", mappedBy="worker")
+//     */
+//    private $bistros;
 
     /**
      * @var \DateTime
@@ -188,13 +188,13 @@ class Worker
     {
         return $this->type;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->bistros = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+//    /**
+//     * Constructor
+//     */
+//    public function __construct()
+//    {
+//        $this->bistros = new \Doctrine\Common\Collections\ArrayCollection();
+//    }
 
     /**
      * Set created

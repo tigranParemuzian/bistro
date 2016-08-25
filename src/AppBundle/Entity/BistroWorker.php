@@ -39,7 +39,7 @@ class BistroWorker
      *
      * @Assert\NotBlank(message="Worker can`t be null")
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Worker", inversedBy="bistros")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="bistros")
      * @ORM\JoinColumn(name="worker_id", referencedColumnName="id")
      */
     private $worker;
@@ -142,10 +142,10 @@ class BistroWorker
     /**
      * Set worker
      *
-     * @param \AppBundle\Entity\Worker $worker
+     * @param \AppBundle\Entity\User $worker
      * @return BistroWorker
      */
-    public function setWorker(\AppBundle\Entity\Worker $worker = null)
+    public function setWorker(\AppBundle\Entity\User $worker = null)
     {
         $this->worker = $worker;
 
@@ -155,7 +155,7 @@ class BistroWorker
     /**
      * Get worker
      *
-     * @return \AppBundle\Entity\Worker 
+     * @return \AppBundle\Entity\User
      */
     public function getWorker()
     {
