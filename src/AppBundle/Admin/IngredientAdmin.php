@@ -36,7 +36,10 @@ class IngredientAdmin extends Admin
     {
         $datagridMapper
             ->add('name')
-            ->add('created')
+            ->add('created', 'doctrine_orm_datetime_range', array('show_filter' => true),'sonata_type_datetime_range_picker',
+                array('field_options_start' => array('format' => 'yyyy-MM-dd HH:mm:ss'),
+                    'field_options_end' => array('format' => 'yyyy-MM-dd HH:mm:ss'))
+            )
             ->add('updated')
         ;
     }
@@ -45,7 +48,7 @@ class IngredientAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name')
-            ->addIdentifier('isReady',  null, array('editable'=>true))
+            ->add('isReady',  null, array('editable'=>true))
             ->add('created')
             ->add('updated')
         ;

@@ -21,7 +21,7 @@ class CashierController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        
+
 
     }
 }
