@@ -66,11 +66,11 @@ class Worker
      */
     private $type;
 
-    /**
-     * @var
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\BistroWorker", mappedBy="worker")
-     */
-    private $bistros;
+//    /**
+//     * @var
+//     * @ORM\OneToMany(targetEntity="AppBundle\Entity\BistroWorker", mappedBy="worker")
+//     */
+//    private $bistros;
 
     /**
      * @var \DateTime
@@ -187,5 +187,91 @@ class Worker
     public function getType()
     {
         return $this->type;
+    }
+//    /**
+//     * Constructor
+//     */
+//    public function __construct()
+//    {
+//        $this->bistros = new \Doctrine\Common\Collections\ArrayCollection();
+//    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return Worker
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     * @return Worker
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return \DateTime 
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
+     * Add bistros
+     *
+     * @param \AppBundle\Entity\BistroWorker $bistros
+     * @return Worker
+     */
+    public function addBistro(\AppBundle\Entity\BistroWorker $bistros)
+    {
+        $this->bistros[] = $bistros;
+
+        return $this;
+    }
+
+    /**
+     * Remove bistros
+     *
+     * @param \AppBundle\Entity\BistroWorker $bistros
+     */
+    public function removeBistro(\AppBundle\Entity\BistroWorker $bistros)
+    {
+        $this->bistros->removeElement($bistros);
+    }
+
+    /**
+     * Get bistros
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getBistros()
+    {
+        return $this->bistros;
     }
 }

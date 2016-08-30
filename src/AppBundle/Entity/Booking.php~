@@ -102,4 +102,119 @@ class Booking
     {
         return $this->count;
     }
+
+    /**
+     * Set cache
+     *
+     * @param integer $cache
+     * @return Booking
+     */
+    public function setCache($cache)
+    {
+        $this->cache = $cache;
+
+        return $this;
+    }
+
+    /**
+     * Get cache
+     *
+     * @return integer 
+     */
+    public function getCache()
+    {
+        return $this->cache;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return Booking
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     * @return Booking
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return \DateTime 
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
+     * Set product
+     *
+     * @param \AppBundle\Entity\ProductIngredient $product
+     * @return Booking
+     */
+    public function setProduct(\AppBundle\Entity\ProductIngredient $product = null)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \AppBundle\Entity\ProductIngredient 
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    /**
+     * Set worker
+     *
+     * @param \AppBundle\Entity\BistroWorker $worker
+     * @return Booking
+     */
+    public function setWorker(\AppBundle\Entity\BistroWorker $worker = null)
+    {
+        $this->worker = $worker;
+
+        return $this;
+    }
+
+    /**
+     * Get worker
+     *
+     * @return \AppBundle\Entity\BistroWorker 
+     */
+    public function getWorker()
+    {
+        return $this->worker;
+    }
 }

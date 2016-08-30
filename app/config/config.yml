@@ -115,7 +115,7 @@ sonata_block:
 # sonata admin configuration
 sonata_admin:
     title:      Bistro
-    title_logo: /bundles/app/images/aniplus_logo.png
+    title_logo: /bundles/app/images/bistro_logo.png
     templates:
         # default global templates
 

@@ -51,6 +51,13 @@ class Ingredient
     private $products;
 
     /**
+     * @var
+     * @ORM\Column(name="is_ready", type="boolean", options={"defoult":true})
+     */
+    private $isReady;
+
+
+    /**
      * @var \DateTime
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
@@ -212,5 +219,28 @@ class Ingredient
     public function getProducts()
     {
         return $this->products;
+    }
+
+    /**
+     * Set isReady
+     *
+     * @param boolean $isReady
+     * @return Ingredient
+     */
+    public function setIsReady($isReady)
+    {
+        $this->isReady = $isReady;
+
+        return $this;
+    }
+
+    /**
+     * Get isReady
+     *
+     * @return boolean 
+     */
+    public function getIsReady()
+    {
+        return $this->isReady;
     }
 }

@@ -87,6 +87,12 @@ class Bistro
     private $updated;
 
 
+    public function __toString()
+    {
+        return $this->id ? $this->name : 'New Bistro';
+        // TODO: Implement __toString() method.
+    }
+
     /**
      * Get id
      *
@@ -233,5 +239,91 @@ class Bistro
     public function getPhone()
     {
         return $this->phone;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->workers = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return Bistro
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     * @return Bistro
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return \DateTime 
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
+     * Add workers
+     *
+     * @param \AppBundle\Entity\BistroWorker $workers
+     * @return Bistro
+     */
+    public function addWorker(\AppBundle\Entity\BistroWorker $workers)
+    {
+        $this->workers[] = $workers;
+
+        return $this;
+    }
+
+    /**
+     * Remove workers
+     *
+     * @param \AppBundle\Entity\BistroWorker $workers
+     */
+    public function removeWorker(\AppBundle\Entity\BistroWorker $workers)
+    {
+        $this->workers->removeElement($workers);
+    }
+
+    /**
+     * Get workers
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getWorkers()
+    {
+        return $this->workers;
     }
 }

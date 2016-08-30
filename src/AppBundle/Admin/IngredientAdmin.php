@@ -25,6 +25,7 @@ class IngredientAdmin extends Admin
             ->tab('Post')
                 ->with('Main', array('class' => 'col-md-9'))
                     ->add('name', 'text')
+                    ->add('isReady')
                     ->add('file', 'add_file_type', array('required' => false, 'label'=>'Cars type image image'))
                 ->end()
             ->end()
@@ -44,6 +45,7 @@ class IngredientAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name')
+            ->addIdentifier('isReady',  null, array('editable'=>true))
             ->add('created')
             ->add('updated')
         ;
