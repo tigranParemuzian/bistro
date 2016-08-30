@@ -25,6 +25,7 @@ class IngredientAdmin extends Admin
             ->tab('Post')
                 ->with('Main', array('class' => 'col-md-9'))
                     ->add('name', 'text')
+                    ->add('file', 'add_file_type', array('required' => false, 'label'=>'Cars type image image'))
                 ->end()
             ->end()
         ;
@@ -39,18 +40,6 @@ class IngredientAdmin extends Admin
         ;
     }
 
-//    public function add(
-//        $name,
-//
-//        // filter
-//        $type = null,
-//        array $filterOptions = array(),
-//
-//        // field
-//        $fieldType = null,
-//        $fieldOptions = null
-//    )
-
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
@@ -58,6 +47,21 @@ class IngredientAdmin extends Admin
             ->add('created')
             ->add('updated')
         ;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function preUpdate($object)
+    {
+        $object->uploadFile();
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function prePersist($object)
+    {
+        $object->uploadFile();
     }
 
 }

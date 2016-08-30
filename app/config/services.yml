@@ -36,3 +36,8 @@ services:
               arguments: [~, AppBundle\Entity\ProductIngredient, ~]
               tags:
                   - { name: sonata.admin, manager_type: orm,  group: Menu, label: Product Ingredient }
+      admin.product.bistro.worker:
+              class: AppBundle\Admin\BistroWorkerAdmin
+              arguments: [~, AppBundle\Entity\BistroWorker, ~]
+              tags:
+                  - { name: sonata.admin, manager_type: orm,  group: Menu, label: Bistro Worker }

@@ -178,7 +178,6 @@ class UserAdmin extends Admin
     {
         parent::prePersist($object);
 
-        $object->setRegister(true);
         $this->updatePassword($object);
         $object->uploadFile();
 

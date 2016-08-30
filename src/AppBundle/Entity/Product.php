@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Traits\File;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -15,6 +16,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Product
 {
+    use File;
+
     /**
      * @var int
      *
@@ -49,9 +52,17 @@ class Product
     /**
      * @var
      * @Assert\NotBlank()
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ProductIngredient", mappedBy="product")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ProductIngredient", mappedBy="product", cascade={"all"}, orphanRemoval=true)
      */
     private $ingredients;
+
+
+    /**
+     * @var
+     * @Assert\NotBlank(message="Created time can`t be null")
+     * @ORM\Column(name="created_time", type="integer")
+     */
+    private $createdTime;
 
     /**
      * @var \DateTime
@@ -66,6 +77,13 @@ class Product
      * @ORM\Column(type="datetime")
      */
     private $updated;
+
+
+    public function __toString()
+    {
+        return $this->id ? $this->name : 'new product';
+        // TODO: Implement __toString() method.
+    }
 
     /**
      * Get id
@@ -231,4 +249,28 @@ class Product
     {
         return $this->ingredients;
     }
+
+    /**
+     * Set createdTime
+     *
+     * @param integer $createdTime
+     * @return Product
+     */
+    public function setCreatedTime($createdTime)
+    {
+        $this->createdTime = $createdTime;
+
+        return $this;
+    }
+
+    /**
+     * Get createdTime
+     *
+     * @return integer
+     */
+    public function getCreatedTime()
+    {
+        return $this->createdTime;
+    }
+
 }

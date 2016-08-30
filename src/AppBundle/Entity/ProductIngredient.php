@@ -15,6 +15,12 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class ProductIngredient
 {
+
+    const KG = 1;
+    const LITER = 2;
+    const CM = 3;
+
+
     /**
      * @var int
      *
@@ -45,7 +51,7 @@ class ProductIngredient
      * @Assert\NotBlank(message="Product can`t be null")
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Product", inversedBy="ingredients")
-     * @ORM\JoinColumn(name="product_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="product_id", referencedColumnName="id", nullable=false)
      */
     private $product;
 
@@ -66,13 +72,6 @@ class ProductIngredient
     private $importPrice;
 
     /**
-     * @var
-     * @Assert\NotBlank(message="Created time can`t be null")
-     * @ORM\Column(name="created_time", type="integer")
-     */
-    private $createdTime;
-
-    /**
      * @var \DateTime
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
@@ -86,6 +85,12 @@ class ProductIngredient
      */
     private $updated;
 
+
+    public function __toString()
+    {
+        return $this->id ? $this->ingredient->getName() . ' proportion: ' . $this->ingredientProportion : 'new ingridient poperty';
+        // TODO: Implement __toString() method.
+    }
 
     /**
      * Get id
@@ -164,29 +169,6 @@ class ProductIngredient
     public function getImportPrice()
     {
         return $this->importPrice;
-    }
-
-    /**
-     * Set createdTime
-     *
-     * @param integer $createdTime
-     * @return ProductIngredient
-     */
-    public function setCreatedTime($createdTime)
-    {
-        $this->createdTime = $createdTime;
-
-        return $this;
-    }
-
-    /**
-     * Get createdTime
-     *
-     * @return integer 
-     */
-    public function getCreatedTime()
-    {
-        return $this->createdTime;
     }
 
     /**
