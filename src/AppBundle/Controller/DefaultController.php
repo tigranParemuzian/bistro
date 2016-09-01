@@ -25,6 +25,7 @@ class DefaultController extends Controller
            return $this->redirectToRoute('sonata_admin_dashboard');
         } elseif ($this->isGranted('ROLE_KITCHENER', $user)) {
 
+            return $this->redirectToRoute('kitchener_index');
         } elseif ($this->isGranted('ROLE_CASHIER', $user)) {
 
         }

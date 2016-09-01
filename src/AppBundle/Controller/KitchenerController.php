@@ -9,6 +9,7 @@
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class KitchenerController extends Controller
@@ -16,11 +17,13 @@ class KitchenerController extends Controller
 
     /**
      * @Route("/kitchener", name="kitchener_index")
+     * @Template()
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
+        return array('d'=>'ff');
 
 
     }

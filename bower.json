@@ -1,0 +1,17 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "jquery-migrate": "~1.2.1",
+    "jquery": "~2.1.4",
+    "font-awesome": "~4.3.0",
+    "jquery-ui": "~1.11.4",
+    "icheck": "~1.0.2",
+    "angular": "1.4.7",
+    "angular-resource": "1.4.7",
+    "bootstrap-hover-dropdown": "~2.1.3",
+    "angular-chart.js": "~0.7.2"
+  },
+  "devDependencies": {}
+}
