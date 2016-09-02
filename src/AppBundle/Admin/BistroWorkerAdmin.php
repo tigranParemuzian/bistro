@@ -32,14 +32,14 @@ class BistroWorkerAdmin extends Admin
                     'description' => 'Lorem ipsum',
                     // ...
                 ))
-                    ->add('bistro', 'sonata_type_model_autocomplete',
+                   /* ->add('bistro', 'sonata_type_model_autocomplete',
                         array('property' => 'name', 'multiple'=>false,
                             "placeholder" => "Select a Driver ",
                             'attr'=>['style' => 'width: 300px !important'])
-                    )
+                    )*/
                     ->add('worker', 'sonata_type_model_autocomplete',
                         array('property' => 'username', 'multiple'=>false,
-                            "placeholder" => "Select a Driver ",
+                            "placeholder" => "Select a worker ",
                             'attr'=>['style' => 'width: 300px !important'])
                     )
             ->end()
@@ -74,6 +74,13 @@ class BistroWorkerAdmin extends Admin
             ->add('worker.username')
             ->add('created')
             ->add('updated')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'show' => array(),
+                    'edit' => array(),
+                    'delete' => array(),
+                )
+            ))
         ;
     }
 

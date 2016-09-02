@@ -49,6 +49,13 @@ class IngredientAdmin extends Admin
             ->add('isReady',  null, array('editable'=>true))
             ->add('created')
             ->add('updated')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'show' => array(),
+                    'edit' => array(),
+                    'delete' => array(),
+                )
+            ))
         ;
     }
 

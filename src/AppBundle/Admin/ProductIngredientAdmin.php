@@ -95,7 +95,7 @@ class ProductIngredientAdmin extends Admin
             ->add('updated')
             ->add('_action', 'actions', array(
                 'actions' => array(
-                    'show' => array(),
+//                    'show' => array(),
                     'edit' => array(),
                     'delete' => array(),
                 )

@@ -37,7 +37,7 @@ class ProductAdmin extends Admin
                                 ))
                     ->add('createdTime', 'number')
                     ->add('exportPrice', 'number')
-                    ->add('file', 'add_file_type', array('required' => false, 'label'=>'Cars type image image'))
+                    ->add('file', 'add_file_type', array('required' => false, 'label'=>'Product image'))
                 ->end()
         ;
     }
@@ -64,7 +64,7 @@ class ProductAdmin extends Admin
             ->add('updated')
             ->add('_action', 'actions', array(
                 'actions' => array(
-                    'show' => array(),
+//                    'show' => array(),
                     'edit' => array(),
                     'delete' => array(),
                 )

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Traits\File;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -15,6 +16,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class Bistro
 {
+    use File;
     /**
      * @var int
      *
@@ -68,7 +70,7 @@ class Bistro
     /**
      * @var
      * @Assert\NotBlank()
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\BistroWorker", mappedBy="bistro")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\BistroWorker", mappedBy="bistro", cascade={"all"})
      */
     private $workers;
 

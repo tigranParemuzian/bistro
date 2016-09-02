@@ -59,6 +59,11 @@ class BistroWorker
      */
     private $updated;
 
+    public function __toString()
+    {
+        return $this->id ? $this->worker : "new bistro worker";
+        // TODO: Implement __toString() method.
+    }
 
     /**
      * Get id

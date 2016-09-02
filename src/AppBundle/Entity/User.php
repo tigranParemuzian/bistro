@@ -72,6 +72,23 @@ class User extends BaseUser
      */
     private $updated;
 
+    public function __toString()
+    {
+        if($this->id) {
+            if(in_array('ROLE_KITCHENER' ,$this->getRoles())) {
+                $resolte = 'Kitchener ' . $this->getUsername();
+            } elseif(in_array('ROLE_CASHIER' ,$this->getRoles())) {
+                $resolte = 'Cashier ' . $this->getUsername();
+            } else {
+                $resolte = $this->getUsername();
+            }
+        } else {
+            $resolte = 'new user';
+        }
+
+        return $resolte;
+
+    }
 
     public function __construct()
     {

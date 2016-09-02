@@ -35,6 +35,12 @@ class BistroAdmin extends Admin
                 ))
                     ->add('name', 'text')
                     ->add('number', 'number')
+            ->add('file', 'add_file_type', array('required' => false, 'label'=>'Bistro image'))
+            ->add('workers', 'sonata_type_collection', array(), array(
+                'edit' => 'inline',
+                'inline' => 'table',
+                'sortable'  => 'id'
+            ))
                 ->end()
                 ->with('Description', array('class' => 'col-md-3'))
 
@@ -93,10 +99,43 @@ class BistroAdmin extends Admin
             ->addIdentifier('description')
             ->addIdentifier('address')
             ->addIdentifier('phone')
-            ->add('workers.username')
+            ->add('workers')
             ->add('created')
             ->add('updated')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+//                    'show' => array(),
+                    'edit' => array(),
+                    'delete' => array(),
+                )
+            ))
         ;
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function preUpdate($object)
+    {
+        if($object->getWorkers()){
+            foreach($object->getWorkers() as $productIngredient) {
+                $productIngredient->setBistro($object);
+            }
+        }
+
+        $object->uploadFile();
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function prePersist($object)
+    {
+        if($object->getWorkers()){
+            foreach($object->getWorkers() as $productIngredient) {
+                $productIngredient->setBistro($object);
+            }
+        }
+
+        $object->uploadFile();
+    }
 }
