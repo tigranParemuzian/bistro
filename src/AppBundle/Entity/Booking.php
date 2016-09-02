@@ -35,7 +35,7 @@ class Booking
     /**
      * @var
      * @Assert\NotBlank(message="Product can`t be null")
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\ProductIngredient")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Product")
      * @ORM\JoinColumn(name="product_ingredient_id", referencedColumnName="id")
      */
     private $product;
@@ -175,10 +175,10 @@ class Booking
     /**
      * Set product
      *
-     * @param \AppBundle\Entity\ProductIngredient $product
+     * @param \AppBundle\Entity\Product $product
      * @return Booking
      */
-    public function setProduct(\AppBundle\Entity\ProductIngredient $product = null)
+    public function setProduct(\AppBundle\Entity\Product $product = null)
     {
         $this->product = $product;
 
@@ -188,7 +188,7 @@ class Booking
     /**
      * Get product
      *
-     * @return \AppBundle\Entity\ProductIngredient 
+     * @return \AppBundle\Entity\Product
      */
     public function getProduct()
     {

@@ -48,3 +48,9 @@ services:
               arguments: [~, AppBundle\Entity\BistroWorker, ~]
               tags:
                   - { name: sonata.admin, manager_type: orm,  group: Menu, label: Bistro Worker }
+
+      admin.product.booking:
+              class: AppBundle\Admin\BookingAdmin
+              arguments: [~, AppBundle\Entity\Booking, ~]
+              tags:
+                  - { name: sonata.admin, manager_type: orm,  group: Menu, label: Booking }

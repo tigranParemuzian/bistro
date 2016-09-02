@@ -61,7 +61,7 @@ class BistroWorker
 
     public function __toString()
     {
-        return $this->id ? $this->worker : "new bistro worker";
+        return $this->id ? (string)$this->worker : "new bistro worker";
         // TODO: Implement __toString() method.
     }
 
