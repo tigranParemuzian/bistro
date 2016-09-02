@@ -25,6 +25,12 @@ services:
               tags:
                   - { name: sonata.admin, manager_type: orm,  group: Menu, label: Ingredient }
 
+      admin.product.ingredient.unit:
+              class: AppBundle\Admin\IngredientUnitAdmin
+              arguments: [~, AppBundle\Entity\IngredientUnit, ~]
+              tags:
+                  - { name: sonata.admin, manager_type: orm,  group: Menu, label: Ingredient Unit }
+
       admin.product:
               class: AppBundle\Admin\ProductAdmin
               arguments: [~, AppBundle\Entity\Product, ~]
@@ -36,6 +42,7 @@ services:
               arguments: [~, AppBundle\Entity\ProductIngredient, ~]
               tags:
                   - { name: sonata.admin, manager_type: orm,  group: Menu, label: Product Ingredient }
+
       admin.product.bistro.worker:
               class: AppBundle\Admin\BistroWorkerAdmin
               arguments: [~, AppBundle\Entity\BistroWorker, ~]

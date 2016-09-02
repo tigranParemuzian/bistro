@@ -382,7 +382,7 @@
                                             class="badge badge-success">7</span></a></li>
                             <li class="divider"></li>
                             <li><a href="extra-lock-screen.html"><i class="fa fa-lock"></i>Lock Screen</a></li>
-                            <li><a href="extra-signin.html"><i class="fa fa-key"></i>Log Out</a></li>
+                            <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-key"></i>Log Out</a></li>
                         </ul>
                     </li>
                     <li id="topbar-chat" class="hidden-xs"><a href="javascript:void(0)" class="btn-chat"><i
@@ -440,7 +440,8 @@
             </div>
         </nav>
         <!--END CHAT FORM--><!--BEGIN PAGE WRAPPER-->
-        <div id="page-wrapper"><!--BEGIN TITLE & BREADCRUMB PAGE-->
+        <div id="page-wrapper">
+            <!--BEGIN TITLE & BREADCRUMB PAGE-->
             <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
                 <div class="page-header pull-left">
                     <div class="page-title">
@@ -454,12 +455,14 @@
             <div class="page-content">
                 {% block body %}{% endblock %}
             </div>
-            <!--END CONTENT--></div>
+            <!--END CONTENT-->
+        </div>
         <!--BEGIN FOOTER-->
         <div id="footer">
             <div class="copyright">2015 - {{ "now"|date("Y") }} BISTRO </div>
         </div>
-        <!--END FOOTER--><!--END PAGE WRAPPER--></div>
+        <!--END FOOTER--><!--END PAGE WRAPPER-->
+    </div>
 </div>
 {% block javascript %}
     <script src="{{ asset('madmin/js/jquery-1.10.2.min.js') }}"></script>

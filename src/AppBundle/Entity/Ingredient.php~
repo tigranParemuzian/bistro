@@ -35,7 +35,6 @@ class Ingredient
      */
     private $name;
 
-
     /**
      * @var string slug
      *
@@ -219,5 +218,28 @@ class Ingredient
     public function getProducts()
     {
         return $this->products;
+    }
+
+    /**
+     * Set isReady
+     *
+     * @param boolean $isReady
+     * @return Ingredient
+     */
+    public function setIsReady($isReady)
+    {
+        $this->isReady = $isReady;
+
+        return $this;
+    }
+
+    /**
+     * Get isReady
+     *
+     * @return boolean 
+     */
+    public function getIsReady()
+    {
+        return $this->isReady;
     }
 }

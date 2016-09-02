@@ -37,13 +37,13 @@ class ProductIngredientAdmin extends Admin
                     ->add('ingredient', 'sonata_type_model_list',
                         array(
                         ), array(
-                            'placeholder' => 'No author selected'
+                            'placeholder' => 'No Ingredient selected'
                         ))
                     ->add('ingredientProportion', 'text', array('required'=>false))
-                    ->add('ingredientUnit', 'choice', array('choices' =>
-                            array(ProductIngredient::KG=> 'Kg',
-                                ProductIngredient::LITER=>'Liter',
-                                ProductIngredient::CM=>'Cm')
+                    ->add('ingredientUnit', 'sonata_type_model_list',
+                        array(
+                        ), array(
+                            'placeholder' => 'No Ingredient unit selected'
                         )
                     )
                     ->add('importPrice', 'number')

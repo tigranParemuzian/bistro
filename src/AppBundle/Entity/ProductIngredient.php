@@ -42,7 +42,8 @@ class ProductIngredient
      * @var
      * @Assert\NotBlank(message="Ingredient Unit can`t be null")
      *
-     * @ORM\Column(name="ingredient_unit", type="smallint")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\IngredientUnit", inversedBy="ingredient")
+     * @ORM\JoinColumn(name="ingredient_unite", referencedColumnName="id")
      */
     private $ingredientUnit;
 
@@ -88,7 +89,7 @@ class ProductIngredient
 
     public function __toString()
     {
-        return $this->id ? $this->ingredient->getName() . ' proportion: ' . $this->ingredientProportion : 'new ingridient poperty';
+        return $this->id ? $this->ingredient->getName() . ' proportion: ' . $this->ingredientProportion . ' ' . $this->ingredientUnit : 'new ingridient poperty';
         // TODO: Implement __toString() method.
     }
 
@@ -123,29 +124,6 @@ class ProductIngredient
     public function getIngredientProportion()
     {
         return $this->ingredientProportion;
-    }
-
-    /**
-     * Set ingredientUnit
-     *
-     * @param integer $ingredientUnit
-     * @return ProductIngredient
-     */
-    public function setIngredientUnit($ingredientUnit)
-    {
-        $this->ingredientUnit = $ingredientUnit;
-
-        return $this;
-    }
-
-    /**
-     * Get ingredientUnit
-     *
-     * @return integer 
-     */
-    public function getIngredientUnit()
-    {
-        return $this->ingredientUnit;
     }
 
     /**
@@ -261,5 +239,28 @@ class ProductIngredient
     public function getIngredient()
     {
         return $this->ingredient;
+    }
+
+    /**
+     * Set ingredientUnit
+     *
+     * @param \AppBundle\Entity\IngredientUnit $ingredientUnit
+     * @return ProductIngredient
+     */
+    public function setIngredientUnit(\AppBundle\Entity\IngredientUnit $ingredientUnit = null)
+    {
+        $this->ingredientUnit = $ingredientUnit;
+
+        return $this;
+    }
+
+    /**
+     * Get ingredientUnit
+     *
+     * @return \AppBundle\Entity\IngredientUnit 
+     */
+    public function getIngredientUnit()
+    {
+        return $this->ingredientUnit;
     }
 }

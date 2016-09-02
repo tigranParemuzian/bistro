@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use AppBundle\Traits\File;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -12,6 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="ingredient")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\IngredientRepository")
+ * @UniqueEntity("name")
  * @ORM\HasLifecycleCallbacks()
  */
 class Ingredient
@@ -35,7 +37,6 @@ class Ingredient
      */
     private $name;
 
-
     /**
      * @var string slug
      *
@@ -52,7 +53,7 @@ class Ingredient
 
     /**
      * @var
-     * @ORM\Column(name="is_ready", type="boolean", options={"defoult":true})
+     * @ORM\Column(name="is_ready", type="boolean")
      */
     private $isReady;
 

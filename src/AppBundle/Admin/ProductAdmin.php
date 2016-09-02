@@ -23,11 +23,10 @@ class ProductAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->tab('Post')
                 ->with('Main', array(
-                    'class'       => 'col-md-12',
+                    'class'       => 'col-md-12'/*,
                     'box_class'   => 'box box-solid box-danger',
-                    'description' => 'Lorem ipsum',
+                    'description' => 'Lorem ipsum',*/
                     // ...
                 ))
                     ->add('name', 'text')
@@ -40,7 +39,6 @@ class ProductAdmin extends Admin
                     ->add('exportPrice', 'number')
                     ->add('file', 'add_file_type', array('required' => false, 'label'=>'Cars type image image'))
                 ->end()
-            ->end()
         ;
     }
 

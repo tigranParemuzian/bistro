@@ -42,7 +42,8 @@ class ProductIngredient
      * @var
      * @Assert\NotBlank(message="Ingredient Unit can`t be null")
      *
-     * @ORM\Column(name="ingredient_unit", type="smallint")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\IngredientUnit", inversedBy="ingredient")
+     * @ORM\JoinColumn(name="ingredient_unit", referencedColumnName="id", onDelete="CASCADE")
      */
     private $ingredientUnit;
 
@@ -123,29 +124,6 @@ class ProductIngredient
     public function getIngredientProportion()
     {
         return $this->ingredientProportion;
-    }
-
-    /**
-     * Set ingredientUnit
-     *
-     * @param integer $ingredientUnit
-     * @return ProductIngredient
-     */
-    public function setIngredientUnit($ingredientUnit)
-    {
-        $this->ingredientUnit = $ingredientUnit;
-
-        return $this;
-    }
-
-    /**
-     * Get ingredientUnit
-     *
-     * @return integer 
-     */
-    public function getIngredientUnit()
-    {
-        return $this->ingredientUnit;
     }
 
     /**

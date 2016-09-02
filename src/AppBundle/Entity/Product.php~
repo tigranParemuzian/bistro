@@ -59,7 +59,6 @@ class Product
 
     /**
      * @var
-     * @Assert\NotBlank(message="Created time can`t be null")
      * @ORM\Column(name="created_time", type="integer")
      */
     private $createdTime;
