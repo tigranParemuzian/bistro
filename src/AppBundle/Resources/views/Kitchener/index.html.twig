@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {#{{ dump(products) }}#}
     <div class="row">
         <div class="col-lg-12">
             <div class="panel">
@@ -83,25 +84,31 @@
                                  data-control-action="paging" class="jplist-pagination"></div>
                         </div>
                         <ul class="box text-shadow ul-li-list"><!--<item>1</item>-->
-                            <li class="list-item">
-                                <div class="list-box"><!--<img/>-->
-                                    <div class="img"><img
-                                                src="/madmin/vendors/jplist/html/img/thumbs-450/arch-1.jpg" alt=""
-                                                title=""/></div>
-                                    <!--<data></data>-->
-                                    <div class="block"><p class="date">03/15/2012</p>
+                            {% for product in products %}
+                                <li id="{{ product.slug }}" class="list-item"  data-target="#modal-prompt"
+                                    data-toggle="modal" >
+                                    <div class="list-box"><!--<img/>-->
+                                        <div class="img"><img
+                                                    src="{% if product.downloadLink %}
+                                                            {{ product.downloadLink }}
+                                                            {% else %} /madmin/vendors/jplist/html/img/thumbs-450/autumn-1.jpg
+                                                            {% endif %}" alt="" title="{{ product.name }}"/></div>
+                                        <!--<data></data>-->
+                                        <div class="block"><p class="date">{{ product.created | date('Y M d') }}</p>
 
-                                        <p class="title">Arch</p>
+                                            <p class="title">{{ product.name }}</p>
 
-                                        <p class="desc">An arch is a structure that spans a space and
-                                            supports a load. Arches appeared as early as the 2nd millennium
-                                            BC in Mesopotamian brick architecture and their systematic use
-                                            started with the Ancient Romans who were the first to apply the
-                                            technique to a wide range of structures.</p>
+                                            <p class="desc">An arch is a structure that spans a space and
+                                                supports a load. Arches appeared as early as the 2nd millennium
+                                                BC in Mesopotamian brick architecture and their systematic use
+                                                started with the Ancient Romans who were the first to apply the
+                                                technique to a wide range of structures.</p>
 
-                                        <p class="like">5 Likes</p></div>
-                                </div>
-                            </li>
+                                            <p class="like">{{ product.exportPrice }} AMD {{ product.createdTime }} min </p></div>
+                                    </div>
+                                </li>
+                                {% endfor %}
+
                             <!--<item>2</item>-->
                             <li class="list-item">
                                 <div class="list-box"><!--<img/>-->
@@ -886,4 +893,28 @@
             </div>
         </div>
     </div>
+
+    <!--Modal Responsive-->
+    <div id="modal-prompt" tabindex="-1" role="dialog" aria-labelledby="modal-prompt-label"
+         aria-hidden="true" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" aria-hidden="true"
+                            class="close">&times;</button>
+                    <h4 id="modal-prompt-label" class="modal-title">Count of products</h4></div>
+                <div class="modal-body"><input id="order-count" type="text" class="form-control"/></div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+                    <button type="button" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+
+{{ parent() }}
+    <script src="{{ asset('bundles/app/js/order.js') }}"></script>
 {% endblock %}

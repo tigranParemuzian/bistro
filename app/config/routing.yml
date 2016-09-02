@@ -2,6 +2,9 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
+booking_rest:
+    type:     rest
+    resource: AppBundle\Controller\Rest\BookingController
 
 # fos user routes
 fos_user_security:

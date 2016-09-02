@@ -23,8 +23,9 @@ class KitchenerController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $products = $em->getRepoaitory('AppBundle:Products')->findAll();
-        return array('d'=>'ff');
+        $products = $em->getRepository('AppBundle:Product')->findAll();
+
+        return array('products'=>$products);
 
 
     }

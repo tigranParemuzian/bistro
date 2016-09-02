@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -16,6 +17,10 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class Booking
 {
+    const IS_NEW = 0;
+    const IN_PROGRESS = 1;
+    const IS_READY = 2;
+
     /**
      * @var int
      *
@@ -29,6 +34,7 @@ class Booking
      * @var string
      * @Assert\NotBlank()
      * @ORM\Column(name="count", type="string", length=255)
+     * @Groups({"booking_list"})
      */
     private $count;
 
@@ -37,6 +43,7 @@ class Booking
      * @Assert\NotBlank(message="Product can`t be null")
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Product")
      * @ORM\JoinColumn(name="product_ingredient_id", referencedColumnName="id")
+     * @Groups({"booking_product"})
      */
     private $product;
 
@@ -45,6 +52,7 @@ class Booking
      * @Assert\NotBlank(message="Worker can`t be null")
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\BistroWorker")
      * @ORM\JoinColumn(name="bistro_worker_id", referencedColumnName="id")
+     * @Groups({"booking_worker"})
      */
     private $worker;
 
@@ -52,13 +60,21 @@ class Booking
      * @var
      * @Assert\NotBlank(message="Cache can`t be null")
      * @ORM\Column(name="cache", type="integer")
+     * @Groups({"booking_list"})
      */
     private $cache;
+
+    /**
+     * @var
+     * @ORM\Column(name="status", type="smallint")
+     */
+    private $status;
 
     /**
      * @var \DateTime
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
+     * @Groups({"booking_list"})
      */
     private $created;
 
